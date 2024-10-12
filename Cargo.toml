@@ -1,0 +1,3 @@
+[workspace]
+resolver = "2"
+members = ["cxx-qt-extensions", "cxx-qt-extensions-headers", "local-include"]

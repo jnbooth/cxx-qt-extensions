@@ -41,6 +41,8 @@ mod ffi {
         #[rust_name = "is_null"]
         fn isNull(self: &QUuid) -> bool;
 
+        fn variant(self: &QUuid) -> UuidVariant;
+
         fn version(self: &QUuid) -> UuidVersion;
     }
 
@@ -92,7 +94,7 @@ mod ffi {
     }
 }
 
-pub use ffi::UuidVersion as UuidVer;
+pub use ffi::{UuidVariant, UuidVersion};
 
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(C)]

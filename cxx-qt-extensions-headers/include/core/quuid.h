@@ -3,6 +3,7 @@
 #include <QtCore/QUuid>
 #include "rust/cxx.h"
 
+using UuidVariant = QUuid::Variant;
 using UuidVersion = QUuid::Version;
 
 namespace rust

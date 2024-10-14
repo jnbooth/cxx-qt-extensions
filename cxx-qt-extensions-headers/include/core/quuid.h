@@ -21,3 +21,7 @@ namespace rust
     QUuid quuidFromStr(::rust::str string);
   }
 }
+
+using QSet_QUuid = QSet<QUuid>;
+using QList_QUuid = QList<QUuid>;
+using QVector_QUuid = QVector<QUuid>;

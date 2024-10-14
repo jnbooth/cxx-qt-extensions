@@ -4,10 +4,8 @@ pub mod ffi {
         include!("cxx-qt-extensions/quuid.h");
         type QUuid = crate::QUuid;
 
-        include!("cxx-qt-lib/qvariant.h");
-        type QVariant = cxx_qt_lib::QVariant;
-
         include!("cxx-qt-extensions/qvariant.h");
+        type QVariant = cxx_qt_lib::QVariant;
     }
 
     #[namespace = "rust::cxxqtextensions1::qvariant"]

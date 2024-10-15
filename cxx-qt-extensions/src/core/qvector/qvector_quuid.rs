@@ -6,17 +6,20 @@
 #[cxx::bridge]
 pub mod ffi {
     unsafe extern "C++" {
-        include!("cxx-qt-extensions/quuid.h");
-        type QUuid = crate::QUuid;
-
+        include!("cxx-qt-lib/qvector.h");
         include!("cxx-qt-extensions/qvector.h");
         type QVector_QUuid = cxx_qt_lib::QVector<QUuid>;
     }
 
     unsafe extern "C++" {
-        #[rust_name = "cxx_clear"]
+        include!("cxx-qt-extensions/quuid.h");
+        type QUuid = crate::QUuid;
+    }
+
+    unsafe extern "C++" {
+        #[rust_name = "cxx_qvector_clear"]
         fn clear(vec: &mut QVector_QUuid);
-        #[rust_name = "cxx_contains"]
+        #[rust_name = "cxx_qvector_contains"]
         fn contains(vec: &QVector_QUuid, _: &QUuid) -> bool;
     }
 

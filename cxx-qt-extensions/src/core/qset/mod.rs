@@ -10,7 +10,7 @@ macro_rules! impl_qset_element {
             type TypeId = type_id!($typeId);
 
             fn clear(set: &mut QSet<Self>) {
-                $module::ffi::cxx_clear(set)
+                $module::ffi::cxx_qset_clear(set)
             }
 
             fn clone(set: &QSet<Self>) -> QSet<Self> {
@@ -18,7 +18,7 @@ macro_rules! impl_qset_element {
             }
 
             fn contains(set: &QSet<Self>, value: &Self) -> bool {
-                $module::ffi::cxx_contains(set, value)
+                $module::ffi::cxx_qset_contains(set, value)
             }
 
             fn default() -> QSet<Self> {
@@ -46,7 +46,7 @@ macro_rules! impl_qset_element {
             }
 
             fn remove(set: &mut QSet<Self>, value: &Self) -> bool {
-                $module::ffi::cxx_remove(set, value)
+                $module::ffi::cxx_qset_remove(set, value)
             }
         }
     };

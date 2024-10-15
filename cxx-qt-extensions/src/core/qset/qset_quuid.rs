@@ -6,19 +6,22 @@
 #[cxx::bridge]
 pub mod ffi {
     unsafe extern "C++" {
-        include!("cxx-qt-extensions/QUuid.h");
-        type QUuid = crate::QUuid;
-
+        include!("cxx-qt-lib/qset.h");
         include!("cxx-qt-extensions/qset.h");
         type QSet_QUuid = cxx_qt_lib::QSet<QUuid>;
     }
 
     unsafe extern "C++" {
-        #[rust_name = "cxx_clear"]
+        include!("cxx-qt-extensions/quuid.h");
+        type QUuid = crate::QUuid;
+    }
+
+    unsafe extern "C++" {
+        #[rust_name = "cxx_qset_clear"]
         fn clear(set: &mut QSet_QUuid);
-        #[rust_name = "cxx_contains"]
+        #[rust_name = "cxx_qset_contains"]
         fn contains(set: &QSet_QUuid, _: &QUuid) -> bool;
-        #[rust_name = "cxx_remove"]
+        #[rust_name = "cxx_qset_remove"]
         fn remove(set: &mut QSet_QUuid, _: &QUuid) -> bool;
     }
 

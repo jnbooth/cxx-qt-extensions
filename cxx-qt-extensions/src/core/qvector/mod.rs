@@ -18,7 +18,7 @@ macro_rules! impl_qvector_element {
             }
 
             fn clear(vector: &mut QVector<Self>) {
-                $module::ffi::cxx_clear(vector)
+                $module::ffi::cxx_qvector_clear(vector)
             }
 
             fn clone(vector: &QVector<Self>) -> QVector<Self> {
@@ -26,7 +26,7 @@ macro_rules! impl_qvector_element {
             }
 
             fn contains(vector: &QVector<Self>, value: &Self) -> bool {
-                $module::ffi::cxx_contains(vector, value)
+                $module::ffi::cxx_qvector_contains(vector, value)
             }
 
             fn default() -> QVector<Self> {

@@ -18,7 +18,7 @@ macro_rules! impl_qlist_element {
             }
 
             fn clear(list: &mut QList<Self>) {
-                $module::ffi::cxx_clear(list)
+                $module::ffi::cxx_qlist_clear(list)
             }
 
             fn clone(list: &QList<Self>) -> QList<Self> {
@@ -26,7 +26,7 @@ macro_rules! impl_qlist_element {
             }
 
             fn contains(list: &QList<Self>, value: &Self) -> bool {
-                $module::ffi::cxx_contains(list, value)
+                $module::ffi::cxx_qlist_contains(list, value)
             }
 
             fn default() -> QList<Self> {

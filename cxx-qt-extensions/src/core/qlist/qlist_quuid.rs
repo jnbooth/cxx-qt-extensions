@@ -8,19 +8,20 @@ use crate::QUuid;
 #[cxx::bridge]
 pub mod ffi {
     unsafe extern "C++" {
+        include!("cxx-qt-lib/qlist.h");
+        include!("cxx-qt-extensions/qlist.h");
+        type QList_QUuid = cxx_qt_lib::QList<QUuid>;
+    }
+
+    unsafe extern "C++" {
         include!("cxx-qt-extensions/quuid.h");
         type QUuid = crate::QUuid;
     }
 
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qlist.h");
-        type QList_QUuid = cxx_qt_lib::QList<QUuid>;
-    }
-
-    unsafe extern "C++" {
-        #[rust_name = "cxx_clear"]
+        #[rust_name = "cxx_qlist_clear"]
         fn clear(list: &mut QList_QUuid);
-        #[rust_name = "cxx_contains"]
+        #[rust_name = "cxx_qlist_contains"]
         fn contains(list: &QList_QUuid, _: &QUuid) -> bool;
     }
 

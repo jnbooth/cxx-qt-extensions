@@ -1,11 +1,14 @@
 #[cxx::bridge]
 pub mod ffi {
     unsafe extern "C++" {
-        include!("cxx-qt-extensions/quuid.h");
-        type QUuid = crate::QUuid;
-
+        include!("cxx-qt-lib/qvariant.h");
         include!("cxx-qt-extensions/qvariant.h");
         type QVariant = cxx_qt_lib::QVariant;
+    }
+
+    unsafe extern "C++" {
+        include!("cxx-qt-extensions/quuid.h");
+        type QUuid = crate::QUuid;
     }
 
     #[namespace = "rust::cxxqtextensions1::qvariant"]

@@ -12,7 +12,13 @@ fn main() {
         qtbuild.version().major
     );
 
-    let bridges = vec!["core/quuid", "core/qvariant/qvariant_quuid"];
+    let bridges = vec![
+        "core/quuid",
+        "core/qlist/qlist_quuid",
+        "core/qset/qset_quuid",
+        "core/qvariant/qvariant_quuid",
+        "core/qvector/qvector_quuid",
+    ];
 
     for bridge in &bridges {
         println!("cargo:rerun-if-changed=src/{bridge}.rs");

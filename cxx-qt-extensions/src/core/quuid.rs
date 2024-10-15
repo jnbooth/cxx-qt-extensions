@@ -71,7 +71,7 @@ mod ffi {
             b8: u8,
         ) -> QUuid;
         #[doc(hidden)]
-        #[rust_name = "qdate_to_qstring"]
+        #[rust_name = "quuid_to_qstring"]
         fn toQString(value: &QUuid) -> QString;
     }
     #[namespace = "rust::cxxqtextensions1"]
@@ -113,7 +113,7 @@ impl Default for QUuid {
 
 impl fmt::Display for QUuid {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", ffi::qdate_to_qstring(self))
+        write!(f, "{}", ffi::quuid_to_qstring(self))
     }
 }
 
